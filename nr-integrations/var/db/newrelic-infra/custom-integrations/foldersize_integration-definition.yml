@@ -1,0 +1,13 @@
+name: com.vgm.foldersize_integration
+description: Reports the Folder size as metrics and inventory
+protocol_version: 1
+os: linux
+
+commands:
+  foldersize_integration
+    command:
+      - ./bin/foldersize_integration.py --folder /var
+      - '--folder'
+      - '/var'
+    prefix: services/foldersize_integration
+    interval: 15

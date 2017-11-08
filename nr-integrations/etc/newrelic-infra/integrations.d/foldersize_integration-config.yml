@@ -1,0 +1,11 @@
+integration_name: com.vgmorg.foldersize_integration
+
+instances:
+  - name: foldersize
+    command: foldersize_integration
+    arguments:
+      environment: "dev"
+    labels:
+      role: "development"
+      lang: "foldersize"
+      metrics: "folder"
