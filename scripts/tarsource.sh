@@ -10,4 +10,5 @@ echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
 tar czvf foldersize-integration-$VERSION.tar.gz nr-integrations
 mv foldersize-integration-$VERSION.tar.gz ~/rpmbuild/SOURCES
-sed -i s/VERSION/$VERSION/g specs/foldersize_integration.spec > ~/rpmbuild/SPECS/foldersize_integration.spec
+cp specs/foldersize_integration.spec ~/rpmbuild/SPECS/foldersize_integration.spec
+sed -i s/VERSION/$VERSION/g ~/rpmbuild/SPECS/foldersize_integration.spec
