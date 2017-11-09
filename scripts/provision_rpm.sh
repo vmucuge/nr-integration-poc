@@ -10,6 +10,7 @@ sudo curl -o /etc/yum.repos.d/newrelic-infra.repo https://download.newrelic.com/
 sudo yum -q makecache -y --disablerepo='*' --enablerepo='newrelic-infra'
 echo "license_key: $NR_LICENSE_KEY" | tee -a /etc/newrelic-infra.yml
 sudo yum install newrelic-infra ansible -y
+sudo yum -y install https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.rpm
 
 extip=$(curl -s http://metadata/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip -H "Metadata-Flavor: Google")
 echo "== EXTERNAL IP: ${extip}"
