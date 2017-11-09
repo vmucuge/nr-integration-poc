@@ -5,7 +5,7 @@ Summary:       A Python example integration for New Relic
 
 Group:	       System Environment/Base
 License:       MIT
-URL:	         https://github.com/vmucuge/nr-integration
+URL:           https://github.com/vmucuge/nr-integration-poc
 Source0:       foldersize-integration-VERSION.tar.gz
 BuildArch:     noarch
 BuildRoot:     %{_tmppath}/%{name}-buildroot
