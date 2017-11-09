@@ -25,7 +25,7 @@
 # Customize these global variables
 $GOOGLE_PROJECT_ID = "gcs-bcn-training-1"
 $GOOGLE_CLIENT_EMAIL = "vagrantdeploys@gcs-bcn-training-1.iam.gserviceaccount.com"
-$GOOGLE_JSON_KEY_LOCATION = "~/code/vagrant/vagrant-google/gcs-bcn-training-1-credential.json"
+$GOOGLE_JSON_KEY_LOCATION = "~/.creds/gcs-bcn-training-1-credential.json"
 $LOCAL_USER = "vmucuge"
 $LOCAL_SSH_KEY = "~/.ssh/id_rsa"
 
