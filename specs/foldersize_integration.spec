@@ -1,4 +1,4 @@
-Name:	         foldersize_integration
+Name:          foldersize_integration
 Version:       VERSION
 Release:       1%{?dist}
 Summary:       A Python example integration for New Relic
@@ -6,9 +6,9 @@ Summary:       A Python example integration for New Relic
 Group:	       System Environment/Base
 License:       MIT
 URL:           https://github.com/vmucuge/nr-integration-poc
-Source0:       foldersize-integration-VERSION.tar.gz
+Source0:       %{name}-VERSION.tar.gz
 BuildArch:     noarch
-BuildRoot:     %{_tmppath}/%{name}-buildroot
+BuildRoot:     %{_tmppath}/%{name}-VERSION
 Requires:      python2,newrelic-infra
 
 %description
