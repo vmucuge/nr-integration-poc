@@ -7,8 +7,7 @@ Group:	       System Environment/Base
 License:       MIT
 URL:           https://github.com/vmucuge/nr-integration-poc
 Source0:       %{name}-VERSION.tar.gz
-BuildArch:     noarch
-BuildRoot:     %{_tmppath}/%{name}-VERSION
+BuildArch:     x86_64
 Requires:      python2,newrelic-infra
 
 %description
@@ -19,20 +18,26 @@ It will check for a folder size and send as a Metric (in MB) to New Relic.
 %setup -q
 
 %install
-mkdir -p "$RPM_BUILD_ROOT"
+mkdir -p $RPM_BUILD_ROOT/var/db/newrelic-infra/custom-integrations
+mkdir -p $RPM_BUILD_ROOT/etc/newrelic-infra/integrations.d
 cp -R * "$RPM_BUILD_ROOT"
+rm -f $RPM_BUILD_ROOT/var/db/newrelic-infra/custom-integrations/foldersize_integration.pyc
+rm -f $RPM_BUILD_ROOT/var/db/newrelic-infra/custom-integrations/foldersize_integration.pyo
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+rm -rf %{_tmppath}/%{name}
+rm -rf %{_topdir}/BUILD/%{name}
 
 %files
 %defattr(-,root,root,-)
 /var/db/newrelic-infra/custom-integrations/foldersize_integration-definition.yml
 /var/db/newrelic-infra/custom-integrations/foldersize_integration.py
 /etc/newrelic-infra/integrations.d/foldersize_integration-config.yml
+/var/db/newrelic-infra/custom-integrations/foldersize_integration.pyo
+/var/db/newrelic-infra/custom-integrations/foldersize_integration.pyc
 
 %post
-echo "New Relic Infrastructure Folder Integration Installed"
 
 %doc README.md
 
