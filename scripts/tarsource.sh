@@ -7,8 +7,8 @@ fi
 
 mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
-
-tar czvf foldersize-integration-$VERSION.tar.gz nr-integrations
+mv nr-integrations foldersize-integration-$VERSION
+tar czvf foldersize-integration-$VERSION.tar.gz foldersize-integration-$VERSION
 mv foldersize-integration-$VERSION.tar.gz ~/rpmbuild/SOURCES
 cp specs/foldersize_integration.spec ~/rpmbuild/SPECS/foldersize_integration.spec
 sed -i s/VERSION/$VERSION/g ~/rpmbuild/SPECS/foldersize_integration.spec
