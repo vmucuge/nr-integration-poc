@@ -1,4 +1,4 @@
-#!#/bin/bash
+#!/bin/bash
 VERSION=$1
 if [ -z $1 ] ; then
   echo "Set the version for the integration"
