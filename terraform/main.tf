@@ -1,6 +1,6 @@
 // Configure the Google Cloud provider
 provider "google" {
-  credentials = "${file("~/code/vagrant/vagrant-google/gcs-bcn-training-1-credential.json")}"
+  credentials = "${file("~/.creds/gcs-bcn-training-1-credential.json")}"
   project     = "gcs-bcn-training-1"
   region      = "us-central1"
 }
