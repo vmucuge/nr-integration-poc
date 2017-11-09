@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
   #config.vm.provision :shell, :inline => $PROVISION_DEBIAN
   config.ssh.pty = false
 
-  config.vm.define :instance_z1c do |instance_instance_z1c|
+  config.vm.define :instance_z1c do |instance_z1c|
     instance_z1c.vm.provider :google do |google, override|
       google.google_project_id = $GOOGLE_PROJECT_ID
       google.google_client_email = $GOOGLE_CLIENT_EMAIL
@@ -44,12 +44,9 @@ Vagrant.configure("2") do |config|
       override.ssh.username = $LOCAL_USER
       override.ssh.private_key_path = $LOCAL_SSH_KEY
       override.ssh.pty = false
-      override.vm.provision :shell do |shell|
-        shell.path = "provision.sh"
-      end
 
       google.zone_config "us-central1-c" do |instance_z1c|
-        instance_z1c.name = "instance-instance_z1c"
+        instance_z1c.name = "instance_z1c"
         instance_z1c.image = "debian-9-stretch-v20171025"
         instance_z1c.machine_type = "n1-standard-1"
         instance_z1c.zone = "us-central1-c"
