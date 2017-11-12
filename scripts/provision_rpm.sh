@@ -8,6 +8,8 @@ sudo yum install epel-release
 echo "== Installing NR Infrastructure"
 sudo curl -o /etc/yum.repos.d/newrelic-infra.repo https://download.newrelic.com/infrastructure_agent/linux/yum/el/6/x86_64/newrelic-infra.repo
 sudo yum -q makecache -y --disablerepo='*' --enablerepo='newrelic-infra'
+sudo curl -o /etc/yum.repos.d/integration-infra.repo http://ci-poc.vmucuge-test.tk:81/repo/integration.repo
+sudo yum install -i foldersize_integration
 echo "license_key: $NR_LICENSE_KEY" | tee -a /etc/newrelic-infra.yml
 sudo yum install newrelic-infra ansible -y
 sudo yum -y install https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.rpm
