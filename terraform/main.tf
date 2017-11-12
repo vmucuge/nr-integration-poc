@@ -17,7 +17,7 @@ data "google_container_engine_versions" "central1b" {
   zone = "us-central1-b"
 }
 
-resource "google_container_cluster" "foo" {
+resource "google_container_cluster" "test_cluster" {
   name               = "terraform-test-cluster"
   zone               = "us-central1-b"
   min_master_version     = "${data.google_container_engine_versions.central1b.latest_node_version}"
