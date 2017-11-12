@@ -33,6 +33,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "google/gce"
   #config.vm.provision :shell, :inline => $PROVISION_DEBIAN
   config.ssh.pty = false
+  config.vm.boot_timeout = 20
 
   config.vm.define :instance_deb_1c do |instance_deb_1c|
     instance_deb_1c.vm.provider :google do |google, override|
