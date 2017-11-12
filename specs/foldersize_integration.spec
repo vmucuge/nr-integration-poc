@@ -37,8 +37,6 @@ rm -rf %{_topdir}/BUILD/%{name}
 /var/db/newrelic-infra/custom-integrations/foldersize_integration.pyo
 /var/db/newrelic-infra/custom-integrations/foldersize_integration.pyc
 
-%doc README.md
-
 %changelog
 * Tue Nov 8 2017 VGM <viniciusmucuge@gmail.com> - VERSION
 - PoC and Tests 2017-11-8
