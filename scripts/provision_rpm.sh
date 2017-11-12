@@ -6,7 +6,7 @@ echo "== OS VERSION: ${ver}"
 echo "== Installing Epel Release Repo"
 sudo yum install epel-release
 echo "== Installing NR Infrastructure"
-sudo curl -o /etc/yum.repos.d/newrelic-infra.repo https://download.newrelic.com/infrastructure_agent/linux/yum/el/6/x86_64/newrelic-infra.repo
+sudo curl -o /etc/yum.repos.d/newrelic-infra.repo https://download.newrelic.com/infrastructure_agent/linux/yum/el/7/x86_64/newrelic-infra.repo
 sudo yum -q makecache -y --disablerepo='*' --enablerepo='newrelic-infra'
 sudo curl -o /etc/yum.repos.d/integration-infra.repo http://ci-poc.vmucuge-test.tk:81/repo/integration.repo
 echo "license_key: $NR_LICENSE_KEY" | tee -a /etc/newrelic-infra.yml
