@@ -1,0 +1,7 @@
+[integration-repo]
+name=Extra Packages for Enterprise Linux 7 - $basearch - Source
+baseurl=http://ci-poc.vmucuge-test.tk:81/repo/
+failovermethod=priority
+enabled=1
+#gpgkey=file:///etc/pki/rpm-gpg/integration-gpg-7
+gpgcheck=0
