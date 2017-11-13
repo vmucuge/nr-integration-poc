@@ -5,6 +5,10 @@ MAINTAINER Vinicius Mucuge <viniciusmucuge@gmail.com>
 ENV NRINTEGRATION foldersize_integration
 ENV VERSION "1.0.1"
 
+# Adding sample App to run
+RUN mkdir -p /opt/autoscaler
+ADD app/frontend.py /opt/autoscaler/
+
 ENV NRDIR "nr-integrations"
 ENV INTDIR "/var/db/newrelic-infra/custom-integrations"
 ENV CONFDIR "/etc/newrelic-infra/integrations.d"
@@ -26,4 +30,9 @@ RUN echo "== Installing NR Infrastructure" && \
     echo "license_key: d42e0f214385d45bb811bb096dbf6992e9b50981" > /etc/newrelic-infra.yml && \
     yum install --nogpgcheck -y newrelic-infra
 RUN cat /etc/newrelic-infra.yml
+RUN systemctl enable newrelic-infra
+
+# Expose the port 80
+EXPOSE 80
+
 ENTRYPOINT [ "/opt/scripts/entrypoint.sh" ]
