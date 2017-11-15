@@ -6,7 +6,7 @@ os: linux
 commands:
   foldersize_integration
     command:
-      - ./bin/foldersize_integration.py --folder
-      - '/var'
+      - ./bin/foldersize_integration.py
+      - --folder
     prefix: services/foldersize_integration
     interval: 15
