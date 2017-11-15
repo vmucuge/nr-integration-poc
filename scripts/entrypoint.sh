@@ -1,5 +1,7 @@
 #!/bin/bash
+cd /opt/autoscaler
+echo "Starting New Relic Infra"
+/usr/bin/newrelic-infra &
 
-/bin/bash
-
-sleep 1000
+echo "Starting Frontend Server in Port: 80"
+python /opt/autoscaler/frontend.py
