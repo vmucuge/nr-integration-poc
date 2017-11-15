@@ -1,6 +1,6 @@
 Name:          foldersize_integration
 Version:       VERSION
-Release:       1%{?dist}
+Release:       {?dist}
 Summary:       A Python example integration for New Relic
 
 Group:	       System Environment/Base
@@ -32,11 +32,12 @@ rm -rf %{_topdir}/BUILD/%{name}
 %files
 %defattr(-,root,root,-)
 /var/db/newrelic-infra/custom-integrations/foldersize_integration-definition.yml
-/var/db/newrelic-infra/custom-integrations/foldersize_integration.py
 /etc/newrelic-infra/integrations.d/foldersize_integration-config.yml
-/var/db/newrelic-infra/custom-integrations/foldersize_integration.pyo
-/var/db/newrelic-infra/custom-integrations/foldersize_integration.pyc
+%attr(755, root, root) /var/db/newrelic-infra/custom-integrations/foldersize_integration.py
+%exclude /var/db/newrelic-infra/custom-integrations/foldersize_integration.pyo
+%exclude /var/db/newrelic-infra/custom-integrations/foldersize_integration.pyc
 
+%doc
 %changelog
 * Tue Nov 8 2017 VGM <viniciusmucuge@gmail.com> - VERSION
 - PoC and Tests 2017-11-8
