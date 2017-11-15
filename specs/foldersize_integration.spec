@@ -1,6 +1,6 @@
 Name:          foldersize_integration
 Version:       VERSION
-Release:       {?dist}
+Release:       1%{?dist}
 Summary:       A Python example integration for New Relic
 
 Group:	       System Environment/Base
